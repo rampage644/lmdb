@@ -16,10 +16,10 @@
 # There may be other macros in mdb.c of interest. You should
 # read mdb.c before changing any of them.
 #
-CC	= gcc
+CC	= x86_64-nacl-gcc
 W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast
 THREADS = -pthread
-OPT = -O2 -g
+OPT = -g
 CFLAGS	= $(THREADS) $(OPT) $(W) $(XCFLAGS)
 LDLIBS	=
 SOLIBS	=
@@ -28,7 +28,8 @@ prefix	= /usr/local
 ########################################################################
 
 IHDRS	= lmdb.h
-ILIBS	= liblmdb.a liblmdb.so
+ILIBS	= liblmdb.a 
+# liblmdb.so
 IPROGS	= mdb_stat mdb_copy
 IDOCS	= mdb_stat.1 mdb_copy.1
 PROGS	= $(IPROGS) mtest mtest2 mtest3 mtest4 mtest5
